@@ -1,0 +1,25 @@
+version: "3.8"
+
+services:
+  app:
+    image: backend:latest
+    ports:
+      - "8000:8000" # Map container port 8080 to host port 8080
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/lms_thbs
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
+    depends_on:
+      - db
+
+  db:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - mysql_data:/var/lib/mysql # Optional persistent storage for the database
+    ports:
+      - "3306:3306" # Map container port 3306 to host port 3306
+
+volumes:
+  mysql_data: # Optional persistent storage for the database

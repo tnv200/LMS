@@ -1,0 +1,327 @@
+.candidate-login-box, .forgot-box, .signup-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    padding: 40px;
+    margin: 20px auto;
+    transform: translate(-50%, -55%);
+    background: #0a2b6e;
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border-radius: 10px;
+  }
+  .forgot-box {
+   
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+  }
+  .forgot-box div {
+    margin-top: 20px; /* Adjust the value as needed to create space between the forms */
+  }
+  .forgot-box p:last-child,
+  .forgot-box form a,
+  .forgot-box a.a2 {
+    text-align: center;
+  }
+  
+  .candidate-login-box p:first-child, .forgot-box p:first-child, .signup-box p:first-child {
+    margin: 0 0 30px;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+
+  .forgot-box p,  .candidate-login-box p, .signup-box p{
+    padding:10px;
+  }
+  
+  .candidate-login-box .user-box, .forgot-box .user-box, .signup-box .user-box {
+    position: relative;
+  }
+  
+  .candidate-login-box .user-box input, .forgot-box .user-box input, .signup-box .user-box input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+  }
+  
+  .candidate-login-box .user-box label, .forgot-box .user-box label, .signup-box .user-box label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+  }
+  
+  .candidate-login-box .user-box input:focus ~ label,
+  .candidate-login-box .user-box input:valid ~ label,
+  .forgot-box .user-box input:focus ~ label,
+  .forgot-box .user-box input:valid ~ label,
+  .signup-box .user-box input:focus ~ label,
+  .signup-box .user-box input:valid ~ label {
+    top: -20px;
+    left: 0;
+    color: #fff;
+    font-size: 12px;
+  }
+  
+  .candidate-login-box form a, .forgot-box form a, .signup-box form a {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    font-weight: bold;
+    color: #fff;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 0px;
+    letter-spacing: 3px;
+  }
+  
+  .candidate-login-box a:hover, .forgot-box a:hover, .signup-box a:hover {
+    background: #fff;
+    color: #272727;
+    border-radius: 5px;
+  }
+  
+  .candidate-login-box a span, .forgot-box a span, .signup-box a span {
+    position: absolute;
+    display: block;
+  }
+  
+  .candidate-login-box a span:nth-child(1), .forgot-box a span:nth-child(1), .signup-box a span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #fff);
+    animation: btn-anim1 1.5s linear infinite;
+  }
+  
+  @keyframes btn-anim1 {
+    0% {
+      left: -100%;
+    }
+  
+    50%,100% {
+      left: 100%;
+    }
+  }
+  
+  .candidate-login-box a span:nth-child(2), .forgot-box a span:nth-child(2), .signup-box a span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #fff);
+    animation: btn-anim2 1.5s linear infinite;
+    animation-delay: .375s
+  }
+  
+  @keyframes btn-anim2 {
+    0% {
+      top: -100%;
+    }
+  
+    50%,100% {
+      top: 100%;
+    }
+  }
+  
+  .candidate-login-box a span:nth-child(3), .forgot-box a span:nth-child(3), .signup-box a span:nth-child(3) {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, #fff);
+    animation: btn-anim3 1.5s linear infinite;
+    animation-delay: .75s
+  }
+  
+  @keyframes btn-anim3 {
+    0% {
+      right: -100%;
+    }
+  
+    50%,100% {
+      right: 100%;
+    }
+  }
+  
+  .candidate-login-box a span:nth-child(4), .forgot-box a span:nth-child(4), .signup-box a span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #fff);
+    animation: btn-anim4 1.5s linear infinite;
+    animation-delay: 1.125s
+  }
+  
+  @keyframes btn-anim4 {
+    0% {
+      bottom: -100%;
+    }
+  
+    50%,100% {
+      bottom: 100%;
+    }
+  }
+  
+  .candidate-login-box p:last-child, .forgot-box p:last-child, .signup-box p:last-child {
+    color: #aaa;
+    font-size: 14px;
+  }
+  
+  .candidate-login-box a.a2, .forgot-box a.a2, .signup-box a.a2 {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .candidate-login-box a.a2:hover, .forgot-box a.a2:hover, .signup-box a.a2:hover {
+    background: transparent;
+    color: #aaa;
+    border-radius: 5px;
+  }
+  
+  /* Add this style to center-align the links and buttons */
+  .candidate-login-box p:last-child,
+  .candidate-login-box form a,
+  .candidate-login-box a.a2,
+  .forgot-box p:last-child,
+  .forgot-box form a,
+  .forgot-box a.a2,
+  .signup-box p:last-child,
+  .signup-box form a,
+  .signup-box a.a2 {
+    text-align: center;
+  }
+  
+  
+  .signup-box .user-checkbox {
+    color: #fff;
+  }
+  
+  .custom-button {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    font-weight: bold;
+    color: #fff;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 0px;
+    letter-spacing: 3px;
+    border: none;
+    background: transparent;
+  }
+  .custom-button:hover {
+    background: #fff;
+    color: #272727;
+    border-radius: 5px;
+  }
+  
+  .custom-button span {
+    position: absolute;
+    display: block;
+  }
+  .custom-button span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #fff);
+    animation: btn-anim1 1.5s linear infinite;
+  }
+  
+  .custom-button span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #fff);
+    animation: btn-anim2 1.5s linear infinite;
+    animation-delay: .375s;
+  }
+  
+  .custom-button span:nth-child(3) {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, #fff);
+    animation: btn-anim3 1.5s linear infinite;
+    animation-delay: .75s;
+  }
+  
+  .custom-button span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #fff);
+    animation: btn-anim4 1.5s linear infinite;
+    animation-delay: 1.125s;
+  }
+  
+  @keyframes btn-anim1 {
+    0% {
+      left: -100%;
+    }
+  
+    50%,100% {
+      left: 100%;
+    }
+  }
+  
+  @keyframes btn-anim2 {
+    0% {
+      top: -100%;
+    }
+  
+    50%,100% {
+      top: 100%;
+    }
+  }
+  
+  @keyframes btn-anim3 {
+    0% {
+      right: -100%;
+    }
+  
+    50%,100% {
+      right: 100%;
+    }
+  }
+  
+  @keyframes btn-anim4 {
+    0% {
+      bottom: -100%;
+    }
+  
+    50%,100% {
+      bottom: 100%;
+    }
+  }
+  
+  .forgot-box form:nth-child(2) {
+    margin-top: 20px; /* Adjust the value as needed */
+  }

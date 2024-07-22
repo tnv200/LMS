@@ -1,0 +1,541 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap");
+
+/*  styling scrollbars  */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px #a5aaad;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0a2b6e;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a5aaad;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: "Lato", sans-serif;
+}
+
+.text-primary-p {
+  color: #a5aaad;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.text-title {
+  color: #2e4a66;
+}
+
+.text-lightblue {
+  color: #469cac;
+}
+
+.text-red {
+  color: #cc3d38;
+}
+
+.text-yellow {
+  color: #a98921;
+}
+
+.text-green {
+  color: #3b9668;
+}
+
+.container {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 0.8fr 1fr 1fr 1fr;
+  grid-template-rows: 0.2fr 3fr;
+  grid-template-areas:
+    "sidebar nav nav nav"
+    "sidebar main main main";
+}
+
+@media only screen and (max-width: 978px) {
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.2fr 3fr;
+    grid-template-areas:
+      "nav"
+      "main";
+  }
+}
+
+.course-main {
+  background: #f3f4f6;
+  grid-area: main;
+  overflow-y: auto;
+}
+
+.course-management-container {
+  font-family: "Arial", sans-serif;
+  margin: 20px;
+}
+
+.page-title {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.courses-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.course-row,
+.new-course-button {
+  cursor: pointer;
+}
+
+.courses-table,
+.courses-table th,
+.courses-table td {
+  border: 1px solid #ddd;
+}
+
+.courses-table th,
+.courses-table td {
+  border: 1px solid #ddd;
+  padding: 5px;
+  text-align: center;
+  font-size: 15px;
+}
+
+.courses-table th {
+  background-color: #0a2b6e;
+  color:white;
+  padding:10px;
+}
+
+.course-row:hover {
+  background-color: #f5f5f5;
+}
+
+.selected-course-details {
+  background-color: white;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 8px;
+}
+
+.selected-course-title {
+  margin-bottom: 15px;
+  font-size: 1.5em;
+}
+
+.course-contents {
+  margin-top: 20px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.content-item {
+  /* margin-bottom: 20px;
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 8px;
+  width: 50%;
+  box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff; */
+  margin-top: 20px;
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+}
+
+.content-item > * {
+  margin-bottom: 5px; /* Adjust the value as needed */
+}
+.course-content-form {
+  margin-top: 20px;
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: 50%; /* Adjusted width */
+  margin-left: auto; /* Center the form */
+  margin-right: auto; /* Center the form */
+  box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+}
+
+.course-content-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.course-content-form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.course-content-form select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  /* Add additional styling for the select element if needed */
+  background-color: #f9f9f9; /* Background color */
+  color: #333; /* Text color */
+  font-size: 14px; /* Font size */
+  /* Add any other styles you want for the select element */
+}
+
+/* Customize the appearance of the dropdown arrow */
+.course-content-form select::-ms-expand {
+  display: none;
+}
+
+.course-content-form select:focus {
+  outline: none;
+  border-color: #23c483; /* Border color on focus */
+  box-shadow: 0 0 5px rgba(46, 229, 157, 0.7); /* Box shadow on focus */
+}
+
+.new-course-button {
+  padding: 1.3em 3em;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: rgba(255, 255, 255, 0.726);
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  margin-top: 20px;
+}
+
+.new-course-button:hover {
+  background-color: #3323c4;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+
+.new-course-button:active {
+  transform: translateY(-1px);
+  background-color: #584bd1;
+}
+
+.new-course-form {
+  margin-top: 20px;
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: 50%; /* Adjusted width */
+  margin-left: auto; /* Center the form */
+  margin-right: auto; /* Center the form */
+  box-shadow: 0 5px 10px #999999;
+}
+
+.new-course-form h2 {
+  margin-bottom: 15px;
+  font-size: 1.5em;
+}
+
+.new-course-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.new-course-form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.add-new-course-button,
+.add-new-content-button {
+  padding: 1.3em 3em;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #fff;
+  border: 5px;
+  border-color: #000;
+  border-radius: 20px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+}
+
+.add-new-course-button:hover,
+.add-new-content-button:hover {
+  background-color: #23c483;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+
+.add-new-course-button:active,
+.add-new-content-button:active {
+  transform: translateY(-1px);
+}
+
+/* delete course table button */
+
+.add-content-table-button {
+  appearance: none;
+  background-color: #2ea44f;
+  border: 1px solid rgba(27, 31, 35, 0.15);
+  border-radius: 6px;
+  box-shadow: rgba(27, 31, 35, 0.1) 0 1px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 15px; /* Adjusted line-height */
+  padding: 5px 12px; /* Adjusted padding */
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.add-content-table-button:focus:not(:focus-visible):not(.focus-visible) {
+  box-shadow: none;
+  outline: none;
+}
+
+.add-content-table-button:hover {
+  background-color: #2c974b;
+}
+
+.add-content-table-button:focus {
+  box-shadow: rgba(46, 164, 79, 0.4) 0 0 0 3px;
+  outline: none;
+}
+
+.add-content-table-button:disabled {
+  background-color: #94d3a2;
+  border-color: rgba(27, 31, 35, 0.1);
+  color: rgba(255, 255, 255, 0.8);
+  cursor: default;
+}
+
+.add-content-table-button:active {
+  background-color: #298e46;
+  box-shadow: rgba(20, 70, 32, 0.2) 0 1px 0 inset;
+}
+
+/* View content table button */
+
+.view-content-table-button {
+  appearance: none;
+  background-color: #f39c12; /* Orange color */
+  border: 1px solid rgba(27, 31, 35, 0.15);
+  border-radius: 6px;
+  box-shadow: rgba(27, 31, 35, 0.1) 0 1px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 15px; /* Adjusted line-height */
+  padding: 5px 12px; /* Adjusted padding */
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.view-content-table-button:focus:not(:focus-visible):not(.focus-visible) {
+  box-shadow: none;
+  outline: none;
+}
+
+.view-content-table-button:hover {
+  background-color: #e67e22; /* Darker orange color on hover */
+}
+
+.view-content-table-button:focus {
+  box-shadow: rgba(46, 164, 79, 0.4) 0 0 0 3px;
+  outline: none;
+}
+
+.view-content-table-button:disabled {
+  background-color: #f8c471; /* Lighter orange color for disabled state */
+  border-color: rgba(27, 31, 35, 0.1);
+  color: rgba(255, 255, 255, 0.8);
+  cursor: default;
+}
+
+.view-content-table-button:active {
+  background-color: #d35400; /* Darker orange color on active state */
+  box-shadow: rgba(20, 70, 32, 0.2) 0 1px 0 inset;
+}
+
+/* Delete content table button */
+
+.delete-course-table-button {
+  appearance: none;
+  background-color: #e74c3c; /* Red color */
+  border: 1px solid rgba(27, 31, 35, 0.15);
+  border-radius: 6px;
+  box-shadow: rgba(27, 31, 35, 0.1) 0 1px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 15px; /* Adjusted line-height */
+  padding: 5px 12px; /* Adjusted padding */
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.delete-course-table-button:focus:not(:focus-visible):not(.focus-visible) {
+  box-shadow: none;
+  outline: none;
+}
+
+.delete-course-table-button:hover {
+  background-color: #c0392b; /* Darker red color on hover */
+}
+
+.delete-course-table-button:focus {
+  box-shadow: rgba(46, 164, 79, 0.4) 0 0 0 3px;
+  outline: none;
+}
+
+.delete-course-table-button:disabled {
+  background-color: #f1948a; /* Lighter red color for disabled state */
+  border-color: rgba(27, 31, 35, 0.1);
+  color: rgba(255, 255, 255, 0.8);
+  cursor: default;
+}
+
+.delete-course-table-button:active {
+  background-color: #922b21; /* Darker red color on active state */
+  box-shadow: rgba(20, 70, 32, 0.2) 0 1px 0 inset;
+}
+
+.courses-table {
+  background-color: white;
+  border-collapse: collapse;
+  box-shadow: 0 5px 10px #999999;
+}
+
+.bin-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgb(250, 66, 66);
+  cursor: pointer;
+  border: 2px solid rgb(255, 201, 201);
+  transition-duration: 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+.bin-bottom {
+  width: 15px;
+  z-index: 2;
+}
+.bin-top {
+  width: 17px;
+  transform-origin: right;
+  transition-duration: 0.3s;
+  z-index: 2;
+}
+.bin-button:hover .bin-top {
+  transform: rotate(45deg);
+}
+.bin-button:hover {
+  background-color: rgb(255, 0, 0);
+}
+.bin-button:active {
+  transform: scale(0.9);
+}
+.garbage {
+  position: absolute;
+  width: 14px;
+  height: auto;
+  z-index: 1;
+  opacity: 0;
+  transition: all 0.3s;
+}
+.bin-button:hover .garbage {
+  animation: throw 0.4s linear;
+}
+@keyframes throw {
+  from {
+    transform: translate(-400%, -700%);
+    opacity: 0;
+  }
+  to {
+    transform: translate(0%, 0%);
+    opacity: 1;
+  }
+}

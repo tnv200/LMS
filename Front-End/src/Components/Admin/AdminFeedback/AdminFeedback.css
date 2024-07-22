@@ -1,0 +1,302 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap");
+
+/*  styling scrollbars  */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px #a5aaad;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0a2b6e;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a5aaad;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: "Lato", sans-serif;
+}
+
+.text-primary-p {
+  color: #a5aaad;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.text-title {
+  color: #2e4a66;
+}
+
+.text-lightblue {
+  color: #469cac;
+}
+
+.text-red {
+  color: #cc3d38;
+}
+
+.text-yellow {
+  color: #a98921;
+}
+
+.text-green {
+  color: #3b9668;
+}
+
+.container {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 0.8fr 1fr 1fr 1fr;
+  grid-template-rows: 0.2fr 3fr;
+  grid-template-areas:
+    "sidebar nav nav nav"
+    "sidebar main main main";
+}
+
+@media only screen and (max-width: 978px) {
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.2fr 3fr;
+    grid-template-areas:
+      "nav"
+      "main";
+  }
+}
+
+.admin-feedback-main {
+  background: #f3f4f6;
+  grid-area: main;
+  overflow-y: auto;
+}
+
+.manage-feedback-btn {
+  text-align: right;
+  margin-bottom: 20px;
+  margin-right: 20px;
+  margin-top: 20px;
+}
+
+.manage-feedback-btn .view-fb {
+  background-color: royalblue;
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+.manage-feedback-btn .view-fb:hover {
+  background-color: rgb(0, 64, 255);
+}
+
+.testbox form,
+.testbox form p {
+  padding: 0;
+  margin: 0;
+  outline: none;
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  line-height: 13px;
+  border-radius: 10px;
+}
+
+#h1 {
+  font-size: 24px;
+  font-weight: 400;
+  text-align: center;
+}
+
+#h4 {
+  margin: 20px 0 2px;
+  color: #000;
+}
+
+.testbox {
+  max-width: 400px;
+  margin: auto;
+}
+
+.testbox form {
+  width: 100%;
+  padding: 20px;
+  background: whitesmoke;
+  box-shadow: 0 10px 10px #999999;
+}
+
+.input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.first-name {
+  margin-bottom: 5px;
+}
+
+.first-col {
+  width: 16%;
+  text-align: left;
+}
+
+#textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.btn-block {
+  text-align: center;
+}
+
+.btn-block button {
+  width: 150px;
+  padding: 10px;
+  border: none;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  background-color: #f3d153;
+  font-size: 16px;
+  color: #000;
+  cursor: pointer;
+}
+
+.btn-block button:hover {
+  opacity: 0.9;
+}
+
+@media (min-width: 568px) {
+  th,
+  td {
+    word-break: keep-all;
+  }
+}
+
+#date [type="date"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.feedback-area {
+  /* margin-top: 20px; */
+  margin-bottom: 20px;
+}
+
+/* New styles for the feedback management section */
+.manage-feedback {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.admin-sent-feedbacks,
+.admin-received-feedbacks {
+  width: 45%;
+  box-sizing: border-box;
+  padding: 10px;
+  margin: 0 auto;
+  border: 1px solid #ddd;
+  box-shadow: 9px 9px 19px #949494;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  background: #ffffff;
+}
+
+.admin-feedback-item {
+  margin-bottom: 20px;
+  border-radius: 2px;
+  background: #0a2b6e;
+  box-shadow: 0 5px 10px #999999;
+  padding: 10px;
+  box-sizing: border-box;
+  margin-left: 20px;
+  margin-right: 20px;
+  border-radius: 5px;
+}
+
+.admin-feedback-item p {
+  margin-bottom: 8px;
+  color:white;
+}
+
+.admin-sent-feedbacks h2,
+.admin-received-feedbacks h2 {
+  color: #333;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.feedback-sections {
+  overflow: hidden;
+}
+
+.send-button {
+  font-family: inherit;
+  font-size: 20px;
+  background: royalblue;
+  color: white;
+  padding: 0.4em 0.7em;
+  padding-left: 0.9em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.2s;
+  cursor: pointer;
+  text-align: center;
+}
+
+.send-button span {
+  display: block;
+  margin-left: 0.3em;
+  transition: all 0.3s ease-in-out;
+}
+
+.send-button svg {
+  display: block;
+  transform-origin: center center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.send-button:hover .svg-wrapper {
+  animation: fly-1 0.6s ease-in-out infinite alternate;
+}
+
+.send-button:hover svg {
+  transform: translateX(1.2em) rotate(45deg) scale(1.1);
+}
+
+.send-button:hover span {
+  transform: translateX(5em);
+}
+
+.send-button:active {
+  transform: scale(0.95);
+}
